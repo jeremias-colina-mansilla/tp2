@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(97, 81, 215);
+}
+
+
+#contenedorPersonas{
+    border: 2px solid;
+    margin-top: 10px;
+    min-width: 400px;
+    min-height: 200px;
+    background-color: rgb(155, 31, 31);
+    border-radius: 20px;
+    padding-left: 50px;
+    
+
+}
+#botonTareas{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-width: 200px;
+    background-color:rgb(6, 6, 161);
+    color: white;
+    border: 2px solid;
+    border-color: black;
+
+    
+
+
+}
