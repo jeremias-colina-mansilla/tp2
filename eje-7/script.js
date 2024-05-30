@@ -6,12 +6,12 @@ async function ExtraerDatos(){
         const item = document.createElement('div')
         item.id = persona.id
         item.classList.add('persona')
-        const boton = document.createElement('button')
-        const boton2 = document.createElement('button')
-        boton.innerText = "Ver tareas"
-        boton2.innerText = "Ocultar tareas"
-        boton2.disabled = true
-        boton.addEventListener("click", async () => {
+        const verTareas = document.createElement('button')
+        const ocultarTareas = document.createElement('button')
+        verTareas.innerText = "Ver tareas"
+        ocultarTareas.innerText = "Ocultar tareas"
+        ocultarTareas.disabled = true
+        verTareas.addEventListener("click", async () => {
             const res = await fetch(`https://jsonplaceholder.typicode.com/todos?userId=${persona.id}`);
             const tareas =await res.json()
             tareas.forEach(tareaElemento =>{
@@ -24,12 +24,12 @@ async function ExtraerDatos(){
                     tarea.style.color = 'red'
                 }
                 item.appendChild(tarea)
-                boton.disabled = true
-                boton2.disabled = false
-                boton2.addEventListener("click", async () => {
+                verTareas.disabled = true
+                ocultarTareas.disabled = false
+                ocultarTareas.addEventListener("click", async () => {
                     tarea.innerText = ""
-                boton2.disabled = true
-                boton.disabled = false
+                verTareas.disabled = true
+                verTareas.disabled = false
                 })
             })
         })
@@ -39,8 +39,8 @@ async function ExtraerDatos(){
         <p class="email">Email: ${persona.email}</p>
         <p class="sitio">Sitio: ${persona.website}</p>
         `
-        item.appendChild(boton)
-        item.appendChild(boton2)
+        item.appendChild(verTareas)
+        item.appendChild(ocultarTareas)
         contenedor.appendChild(item)
     });
     }
